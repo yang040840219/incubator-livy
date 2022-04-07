@@ -17,5 +17,9 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
       - name: Build with Maven
-        run: mvn clean package -Pspark-3.0
+        run: mvn clean package -Pspark-3.0 -DskipTests
